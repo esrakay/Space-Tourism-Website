@@ -1,8 +1,8 @@
 :root {
     /* Colors */
-    --clr-dark: 230 35% 7%;
-    --clr-light: 0 0% 100%;
-    --clr-purple: 231 77% 90%;
+    --clr-dark: hsl(230, 35%, 7%);
+    --clr-light: hsl(0, 0%, 100%);
+    --clr-purple: hsl(231, 77%, 90%);
 
     /* Font sizes */
     --fs-900: 9.375rem;
@@ -10,12 +10,146 @@
     --fs-700: 3.5rem;  
     --fs-600: 2rem;
     --fs-500: 1.75rem;
-    --fs-400: 0.9375rem;
     --fs-400: 1rem;
-    --fs-300: 0.875rem;
+    --fs-300: 0.9375rem;
+    --fs-200: 0.875rem;
 
     /* Font Family */
     --ff-barlow: 'Barlow Condensed', sans-serif;
     --ff-bellefair: 'Bellefair', serif;
-
 }
+
+/* CSS reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+li {
+    display: inline-block;
+}
+
+/*  */
+
+.home {
+    font-size: var(--fs-400);
+    font-family: var(--ff-barlow);
+    font-weight: 400;
+    background: no-repeat url("assets/home/background-home-mobile.jpg");
+    background-position: center bottom;
+    background-attachment: fixed;
+    background-size: cover;
+    color: var(--clr-light);
+    text-align: center;
+
+    position: relative;
+}
+
+.hamburger-menu {
+    display: none;
+}
+
+.primary-navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2em;
+    position: fixed;
+    z-index: 100;
+    inset: 0 0 0 30%; 
+    padding: min(20rem, 15vh) 2rem;
+    margin: 0;
+    backdrop-filter: blur(40px);
+    text-transform: uppercase;
+    letter-spacing: .25em;
+
+    transform: translateX(100%);
+}
+
+.primary-navigation[data-toggled="true"] {
+    transform: translateX(0);
+}
+
+.primary-navigation a {
+    color: var(--clr-light);
+}
+
+.primary-navigation  a > span {
+    margin-right: .75em;
+    font-weight: 700;
+}
+
+.section-title {
+    color: var(--title-color, --clr-dark); 
+    letter-spacing: .25em;
+    text-transform: uppercase;
+}
+
+.main-title {
+    --title-color: var(--clr-purple);
+}
+
+.main-title > span {
+    display: block;
+    color: var(--clr-light);
+    font-size: 5rem; 
+    font-family: var(--ff-bellefair);
+    line-height: 100px;    
+}
+
+
+
+
+
+
