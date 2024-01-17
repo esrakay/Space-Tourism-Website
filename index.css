@@ -231,6 +231,10 @@ body {
         transform: translateX(0);
     }
 
+    .hamburger-menu[data-close="true"] {
+        background-image: url("./assets/shared/icon-close.svg");
+    }
+
 }
 
 /* Tablet mode */
@@ -257,7 +261,7 @@ body {
 
     .primary-navigation a {
         display: inline-block;
-        padding: var(--nav-pad, 3em) 0;
+        padding: var(--nav-pad, 2em) 0;
     }
 
     .primary-navigation > .active {
@@ -276,7 +280,51 @@ body {
 }
 
 @media (min-width: 45rem) {
+    .home {
+        background-image: url(assets/home/background-home-desktop.jpg);
+    }
 
+    .primary-header {
+        padding-top: 1rem;
+    }
+
+    .primary-navigation a{
+        --nav-pad: 2em;
+        font-size: var(--fs-400);
+        display: flex;
+    }
+
+    .primary-navigation a > span {
+        display: inline-block;
+    }
+
+    .primary-header::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: hsl(var(--clr-light) / .25);
+        position: relative;
+        order: 1;
+        z-index: 1000;
+        margin-right: -3rem;
+    }
+
+    nav {
+        order: 2
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .home-title > span{
+        padding: 0.3em 0;
+    }
+
+    .section-title, .section-text {
+        text-align: start;
+    }
 }
 
 
