@@ -111,6 +111,7 @@ body {
     display: grid;
     place-items: center;
     padding-inline: 1rem;
+    padding-bottom: 4rem;
 }
 
 .grid-container * {
@@ -388,9 +389,9 @@ body {
     border-bottom: 1px solid hsl(var(--clr-light));
 }
 
-.planet-nav {
+/* .planet-nav {
     margin-bottom: 1.3rem;
-}
+} */
 
 .planet-card__info::after {
     content: '';
@@ -406,12 +407,13 @@ body {
     font-size: var(--fs-700);
     text-transform: uppercase;
     letter-spacing: .1rem;
-    margin-bottom: .1em;
+    margin-top: 2rem
 }
 
 .planet-card__info--text {
     color: hsl(var(--clr-purple));
     line-height: 1.5;
+    margin-top: 2rem;
 }
 
 .planet-card__num {
@@ -447,7 +449,9 @@ body {
 
     .destination-title {
         justify-self: start;
-        padding-left: 1em;
+        align-self: end;
+        margin-top: 2rem;
+        /* padding-left: 1em; */
     }
 
     .grid-container--dest {
@@ -465,18 +469,29 @@ body {
     }
 
     .grid-container--dest {
-        grid-template-rows: 1fr min-content 1fr;
-        grid-template-columns: minmax(1.5rem, 3rem) 1fr minmax(1.5rem, 2rem) 1fr minmax(1.5rem, 3rem);
+        grid-template-rows: 1fr 1fr min-content;
+        column-gap: 2rem;
+        grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(1rem, 1fr);
+    }
+
+    .planet-nav {
+        grid-row: 2; 
+        grid-column: 3;
+        margin-top: 2rem;
+        justify-self: start;
     }
 
     .destination-title {
-        grid-column: 2;
+        grid-column: 2 / span 2;
+        grid-row: 1;
         font-size: var(--fs-500);
     }
 
     .destination-img {
-        grid-row: 2;
+        grid-row: 2 / span 2;
         grid-column: 2;
+        justify-self: start;
+        width: 100%;
     }
 
     .destination-img > img {
@@ -484,12 +499,14 @@ body {
     }
 
     .secondary-navigation {
+        /* width: 70%; */
         justify-content: space-between;
+        gap: 1rem;
     }
 
     .planet {
-        grid-row: 2;
-        grid-column: 4;
+        grid-row: 3;
+        grid-column: 3;
         justify-self: start;
         text-align: left;
     }
