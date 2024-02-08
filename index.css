@@ -103,7 +103,6 @@ body {
     background-position: center bottom;
     background-attachment: fixed;
     background-size: cover;
-
 }
 
 .grid-container {
@@ -160,16 +159,16 @@ body {
 
 .section-title {
     font-size: var(--fs-400);
-    color: hsl(var(--title-color, --clr-dark)); 
+    color: hsl(var(--title-color)); 
     letter-spacing: .15em;
     text-transform: uppercase;
 }
 
-.home-title {
+.home-info__title {
     --title-color: var(--clr-purple);
 }
 
-.home-title > span {
+.home-info__title > span {
     display: block;
     color: hsl(var(--clr-light));
     font-size: var(--fs-title); 
@@ -177,7 +176,7 @@ body {
     padding: .3em;  
 }
 
-.section-text {
+.home-info__text {
     color: hsl(var(--clr-purple));
     line-height: 1.6;
     letter-spacing: .05rem;
@@ -332,21 +331,19 @@ body {
     }
 
     .home-info {
-        grid-row: 2;
-        grid-column: 2; 
+        grid-area: 2 / 2; 
     }
 
     .home-btn {
-        grid-row: 2; 
-        grid-column: 3;
+        grid-area: 2 / 3; 
         align-self: end;
     }
 
-    .home-title > span{
+    .home-info__title > span{
         padding: 0.3em 0;
     }
 
-    .section-title, .section-text {
+    .section-title, .home-info__text {
         text-align: start;
     }
 }
@@ -368,18 +365,18 @@ body {
 
 .destination-img > img{
     max-width: 60%;
-    margin: auto;
-    padding: 1rem 0;
+    margin: 2rem auto;
 }
 
 .secondary-navigation {
     display: flex;
     justify-content: space-evenly;
     text-transform: uppercase;
+    gap: 1.5rem;
 }
 
 .secondary-navigation a {
-    color: hsl(var(--clr-light));
+    color: hsl(var(--clr-purple));
     display: inline-block;
     padding: .7em 0;
     letter-spacing: .1rem;
@@ -389,17 +386,17 @@ body {
     border-bottom: 1px solid hsl(var(--clr-light));
 }
 
-/* .planet-nav {
-    margin-bottom: 1.3rem;
-} */
+.secondary-navigation > .active a {
+    color: var(--clr-light);
+}
 
 .planet-card__info::after {
     content: '';
     display: block;
     max-width: 100%;
     height: 1px;
-    margin: 1.5rem 0;
-    background-color: hsl(var(--clr-light)/.4);
+    margin: 2rem 0;
+    background-color: hsl(var(--clr-light)/.2);
 }
 
 .planet-card__info--title {
@@ -413,7 +410,6 @@ body {
 .planet-card__info--text {
     color: hsl(var(--clr-purple));
     line-height: 1.5;
-    margin-top: 2rem;
 }
 
 .planet-card__num {
@@ -437,10 +433,6 @@ body {
 @media (min-width: 35rem) {
     .destination {
         background: url("assets/destination/background-destination-tablet.jpg");
-        background-repeat: no-repeat;
-        background-position: center bottom;
-        background-attachment: fixed;
-        background-size: cover;
     }
 
     .destination-img > img {
@@ -451,34 +443,33 @@ body {
         justify-self: start;
         align-self: end;
         margin-top: 2rem;
-        /* padding-left: 1em; */
     }
 
     .grid-container--dest {
         margin-top: 2rem;
+    }
+
+    .planet-card__info--text {
+        margin-top: 1rem;
     }
 }
 
 @media (min-width: 45rem) {
     .destination {
         background: url("assets/destination/background-destination-desktop.jpg");
-        background-repeat: no-repeat;
-        background-position: center bottom;
-        background-attachment: fixed;
-        background-size: cover;
     }
 
     .grid-container--dest {
-        grid-template-rows: 1fr 1fr min-content;
+        grid-template-rows: repeat(2, 1fr) min-content;
         column-gap: 2rem;
         grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(1rem, 1fr);
     }
 
     .planet-nav {
-        grid-row: 2; 
-        grid-column: 3;
+        grid-area: 2 / 3;
         margin-top: 2rem;
         justify-self: start;
+        align-self: end;
     }
 
     .destination-title {
@@ -499,14 +490,12 @@ body {
     }
 
     .secondary-navigation {
-        /* width: 70%; */
         justify-content: space-between;
         gap: 1rem;
     }
 
     .planet {
-        grid-row: 3;
-        grid-column: 3;
+        grid-area: 3 / 3;
         justify-self: start;
         text-align: left;
     }
