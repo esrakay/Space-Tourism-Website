@@ -224,6 +224,7 @@ body {
         inset: 0 0 0 30%; 
         padding: min(20rem, 15vh) 2rem;
         backdrop-filter: blur(40px);
+        -webkit-backdrop-filter: blur(40px);
 
         transform: translateX(100%);
         transition: transform 1s ease-in-out;
