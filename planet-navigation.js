@@ -31,11 +31,20 @@ async function getPlanetInfo(name) {
     return planetInfo; 
 }
 
+function setActivePage(planet) {
+    for (link of navLinks) {
+        link.parentElement.classList.remove("active")
+    }
+    planet.parentElement.classList.add("active"); 
+}
+
 async function updateInfo(planet) {
     let planetInfo = await getPlanetInfo(planet.id); 
+    setActivePage(planet)
     planetName.innerHTML = planetInfo.name; 
     planetText.innerHTML = planetInfo.description; 
     planetDistance.innerHTML = planetInfo.distance; 
     planetTravel.innerHTML = planetInfo.travel; 
-    planetImg.src = planetInfo.images.png; 
+    planetImg.src = planetInfo.images.png;     
 }
+
