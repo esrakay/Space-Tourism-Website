@@ -157,7 +157,7 @@ body {
     font-weight: 700;
 }
 
-.section-title {
+.title {
     font-size: var(--fs-400);
     color: hsl(var(--title-color)); 
     letter-spacing: .15em;
@@ -344,7 +344,7 @@ body {
         padding: 0.3em 0;
     }
 
-    .section-title, .home-info__text {
+    .title, .home-info__text {
         text-align: start;
     }
 }
@@ -358,7 +358,7 @@ body {
     background-size: cover;
 }
 
-.destination-title > span {
+.sub-title > span {
     margin-right: 1em;
     font-weight: 700;
     color: hsl(var(--clr-light)/.5);
@@ -440,7 +440,7 @@ body {
         max-width: 70%;
     }
 
-    .destination-title {
+    .sub-title {
         justify-self: start;
         align-self: end;
         margin-top: 2rem;
@@ -511,6 +511,95 @@ body {
     }
     
 }
+
+
+/* crew */
+.crew {
+    background: url("assets/crew/background-crew-mobile.jpg");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.grid-container--crew {
+    /* grid-template-columns: minmax(1.5rem, 3rem) 1fr 1fr minmax(1.5rem, 3rem); */
+    grid-template-areas: 
+        "title"
+        "image"
+        "pagination"
+        "info"
+    ;
+}
+
+.crew-title {
+    grid-area: title; 
+}
+
+.crew-img {
+    grid-area: image;
+    margin-top: 2rem;
+}
+
+.crew-info {
+    grid-area: info; 
+}
+
+.pagination {
+    grid-area: pagination; 
+    display: flex;
+    gap: 1rem; 
+    margin: 1.7rem 0;
+}
+
+.crew-img > img {
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+.crew-img::after {
+    content: "";
+    display: block;
+    max-width: 100%;
+    height: 1px;
+    background-color: hsl(var(--clr-light)/.2);
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: hsl(var(--clr-light)/.3);
+}
+
+.dot.active, .dot:hover {
+    background-color: hsl(var(--clr-light));
+    cursor: pointer;
+}
+
+.crew-info {
+    font-size: var(--fs-300);
+    color: hsl(var(--clr-purple));
+    line-height: 25px;
+    letter-spacing: 1px;
+}
+
+.crew-info__profession {
+    text-transform: uppercase;
+    color: hsl(var(--clr-purple)/.7);
+    font-family: var(--ff-bellefair);
+    font-size: var(--fs-400);
+    margin-bottom: .2rem;
+}
+
+.crew-info__name {
+    text-transform: uppercase;
+    font-family: var(--ff-bellefair);
+    color: hsl(var(--clr-light));
+    font-size: var(--fs-500);
+    margin-bottom: .7rem;
+}
+
 
 
 
